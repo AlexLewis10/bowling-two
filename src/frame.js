@@ -1,6 +1,16 @@
 class Frame {
+  constructor(roll1 , roll2) {
+    this.roll1 = roll1
+    this.roll2 = roll2
+  }
 
   frameScore() {
-    return 6
+    return this.roll1 + this.roll2
+  }
+
+  isStrike() {
+    if (this.roll1 === 10) {
+      return true
+    }
   }
 }
