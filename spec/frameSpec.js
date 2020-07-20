@@ -21,4 +21,12 @@ describe('Frame', () => {
       expect(frame.isStrike()).toEqual(false)
     })
   })
+
+  describe('Player scores a spare', () => {
+    it('returns true if they score a spare', () => {
+      const frame = new Frame(5, 5)
+
+      expect(frame.isSpare()).toEqual(true)
+    })
+  })
 })

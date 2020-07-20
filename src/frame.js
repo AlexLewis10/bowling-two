@@ -14,4 +14,10 @@ class Frame {
     }
     return false
   }
+
+  isSpare() {
+    if (this.roll2 + this.roll2 === 10) {
+      return true
+    }
+  }
 }
