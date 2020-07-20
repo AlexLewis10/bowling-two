@@ -8,11 +8,17 @@ describe('Frame', () => {
     })
   })
 
-  describe('Player scores a strike on their first roll', () => {
-    it('returns a strike', () => {
+  describe('Player scores a strike', () => {
+    it('returns true if they score a strike on their first roll', () => {
       const frame = new Frame(10, 0)
 
       expect(frame.isStrike()).toEqual(true)
+    })
+
+    it('returns false if they do not score a strike', () => {
+      const frame = new Frame(4, 5)
+
+      expect(frame.isStrike()).toEqual(false)
     })
   })
 })
