@@ -17,4 +17,11 @@ class Frame {
     const spare = this.roll1 + this.roll2 === 10? true : false
     return spare
   }
+
+  isValidScore() {
+    if (this.roll1 + this.roll2 <= 10) {
+      return true
+    } 
+  }
 }
+

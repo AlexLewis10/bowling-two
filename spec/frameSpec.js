@@ -35,4 +35,12 @@ describe('Frame', () => {
       expect(frame.isSpare()).toEqual(false)
     })
   })
+
+  describe('Player cannot score more than 10', () => {
+    it('returns true if less than 10', () => {
+      const frame = new Frame(5, 4)
+
+      expect(frame.isValidScore()).toEqual(true)
+    })
+  })
 })
