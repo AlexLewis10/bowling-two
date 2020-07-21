@@ -25,5 +25,13 @@ describe('Scorecard', () => {
 
       expect(scorecard.addFrameScore(5, 6)).toEqual(errorMessage);
     })
+
+    it('can add a maximum of 9 standard frames to the gameScore array', () => {
+      for (let i = 0; i < 9; i++) {
+        scorecard.addFrameScore(3, 4)
+      }
+
+      expect(scorecard.addFrameScore(2, 1)).toEqual('Max number of normal frames')
+    })
   })
 })
