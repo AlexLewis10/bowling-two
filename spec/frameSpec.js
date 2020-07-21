@@ -1,52 +1,44 @@
 describe('Frame', () => {
 
+  let frame
+
+  beforeEach(() => {
+    frame = new Frame()
+  })
+
   describe('Player scores 3, 3', () => {
     it('returns 6', () => {
-      const frame = new Frame(3, 3)
-
-      expect(frame.frameScore()).toEqual(6)
+      expect(frame.frameScore(3, 3)).toEqual(6)
     })
   })
 
   describe('Player scores a strike', () => {
     it('returns true if they score a strike on their first roll', () => {
-      const frame = new Frame(10, 0)
-
-      expect(frame.isStrike()).toEqual(true)
+      expect(frame.isStrike(10, 0)).toEqual(true)
     })
 
     it('returns false if they do not score a strike', () => {
-      const frame = new Frame(4, 5)
-
-      expect(frame.isStrike()).toEqual(false)
+      expect(frame.isStrike(4, 5)).toEqual(false)
     })
   })
 
   describe('Player scores a spare', () => {
     it('returns true if they score a spare', () => {
-      const frame = new Frame(5, 5)
-
-      expect(frame.isSpare()).toEqual(true)
+      expect(frame.isSpare(5, 5)).toEqual(true)
     })
 
     it('returns false if they do not score a spare', () => {
-      const frame = new Frame(3, 3)
-
-      expect(frame.isSpare()).toEqual(false)
+      expect(frame.isSpare(2, 3)).toEqual(false)
     })
   })
 
   describe('Player cannot score more than 10', () => {
     it('returns true if score is equal or less than 10', () => {
-      const frame = new Frame(5, 4)
-
-      expect(frame.isValidScore()).toEqual(true)
+      expect(frame.isValidScore(2, 7)).toEqual(true)
     })
 
     it('returns false if score is more than 10', () => {
-      const frame = new Frame(5, 6)
-
-      expect(frame.isValidScore()).toEqual(false)
+      expect(frame.isValidScore(5, 6)).toEqual(false)
     })
   })
 })
