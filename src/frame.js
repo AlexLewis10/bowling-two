@@ -21,7 +21,8 @@ class Frame {
   isValidScore() {
     if (this.roll1 + this.roll2 <= 10) {
       return true
-    } 
+    }
+    return false
   }
 }
 

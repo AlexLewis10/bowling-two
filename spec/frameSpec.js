@@ -37,10 +37,16 @@ describe('Frame', () => {
   })
 
   describe('Player cannot score more than 10', () => {
-    it('returns true if less than 10', () => {
+    it('returns true if score is equal or less than 10', () => {
       const frame = new Frame(5, 4)
 
       expect(frame.isValidScore()).toEqual(true)
+    })
+
+    it('returns false if score is more than 10', () => {
+      const frame = new Frame(5, 6)
+
+      expect(frame.isValidScore()).toEqual(false)
     })
   })
 })
