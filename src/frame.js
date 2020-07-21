@@ -9,7 +9,7 @@ class Frame {
   }
 
   isStrike() {
-    if (this.roll1 === 10 || this.roll2 === 10) {
+    if (this.roll1 === 10) {
       return true
     }
     return false
@@ -19,5 +19,6 @@ class Frame {
     if (this.roll2 + this.roll2 === 10) {
       return true
     }
+    return false
   }
 }
