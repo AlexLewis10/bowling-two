@@ -14,15 +14,13 @@ class Frame {
   }
 
   isSpare() {
-    const spare = this.roll1 + this.roll2 === 10? true : false
+    const spare = this.roll1 + this.roll2 === 10 ? true : false
     return spare
   }
 
   isValidScore() {
-    if (this.roll1 + this.roll2 <= 10) {
-      return true
-    }
-    return false
+    const isValid = this.roll1 + this.roll2 <= 10 ? true : false
+    return isValid
   }
 }
 
