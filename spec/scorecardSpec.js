@@ -19,10 +19,11 @@ describe('Scorecard', () => {
 
       expect(scorecard.gameScore).toEqual([[5, false, false]])
     })
+
+    it('returns a message to the user if frameScore is invalid', () => {
+      const errorMessage = 'Invalid score, please enter new frame'
+
+      expect(scorecard.addFrameScore(5, 6)).toEqual(errorMessage);
+    })
   })
 })
-
-
-
-
-

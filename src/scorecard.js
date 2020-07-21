@@ -7,6 +7,9 @@ class Scorecard {
   }
 
   addFrameScore(roll1, roll2) {
-    return this.gameScore.push(this.frame.addNewFrame(roll1, roll2))
+    if (Array.isArray(this.frame.addNewFrame(roll1, roll2))) {
+      return this.gameScore.push(this.frame.addNewFrame(roll1, roll2))
+    }
+    return this.frame.addNewFrame(roll1, roll2)
   }
 }
