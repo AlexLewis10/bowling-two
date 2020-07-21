@@ -1,5 +1,12 @@
 class Frame {
 
+  addNewFrame(roll1, roll2) {
+    return [
+      this.frameScore(roll1, roll2), 
+      this.isStrike(roll1, roll2), 
+      this.isSpare(roll1, roll2)]
+  }
+
   frameScore(roll1, roll2) {
     return roll1 + roll2
   }

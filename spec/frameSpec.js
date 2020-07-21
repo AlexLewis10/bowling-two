@@ -6,6 +6,13 @@ describe('Frame', () => {
     frame = new Frame()
   })
 
+
+  describe('Returns information for the frame', () => {
+    it('returns an array with score, spare and strike', () => {
+      expect(frame.addNewFrame(4, 5)).toEqual([9, false, false])
+    })
+  })
+
   describe('Player scores 3, 3', () => {
     it('returns 6', () => {
       expect(frame.frameScore(3, 3)).toEqual(6)
