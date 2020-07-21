@@ -9,16 +9,12 @@ class Frame {
   }
 
   isStrike() {
-    if (this.roll1 === 10) {
-      return true
-    }
-    return false
+    const strike = this.roll1 === 10 ? true : false
+    return strike
   }
 
   isSpare() {
-    if (this.roll2 + this.roll2 === 10) {
-      return true
-    }
-    return false
+    const spare = this.roll1 + this.roll2 === 10? true : false
+    return spare
   }
 }
