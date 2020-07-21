@@ -1,6 +1,9 @@
 class Frame {
 
   addNewFrame(roll1, roll2) {
+    if (!this.isValidScore(roll1, roll2)) {
+      return 'Invalid score, please enter new frame'
+    }
     return [
       this.frameScore(roll1, roll2), 
       this.isStrike(roll1, roll2), 
@@ -11,7 +14,7 @@ class Frame {
     return roll1 + roll2
   }
 
-  isStrike(roll1, roll2) {
+  isStrike(roll1) {
     const strike = roll1 === 10 ? true : false
     return strike
   }
