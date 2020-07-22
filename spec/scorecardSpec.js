@@ -34,4 +34,12 @@ describe('Scorecard', () => {
       expect(scorecard.addNewFrame(2, 1)).toEqual('Max number of normal frames')
     })
   })
+
+  describe('A frame that resulted in a spare', () => {
+    it('sets the spare state to true', () => {
+      scorecard.handleFrameResult([9, false, true])
+
+      expect(scorecard.spare).toEqual(true)
+    })
+  })
 })
