@@ -24,16 +24,19 @@ class Scorecard {
   handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
       this.addToFrameHistory(frameResult)
-      this.gameScore.push(frameResult[0])
+      this._addToGameScore(frameResult[0])
       this._isSpare(frameResult[SPARE])
       this._isStrike(frameResult[STRIKE])
     }
     return frameResult
   }
 
-
   addToFrameHistory(frameResult) {
     return this.frameHistory.push(frameResult)
+  }
+
+  _addToGameScore(score) {
+    this.gameScore.push(score)
   }
 
   _isSpare(spare) {
