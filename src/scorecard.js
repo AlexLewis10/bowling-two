@@ -1,4 +1,6 @@
 const MAX_NORMAL_FRAMES = 9
+const SPARE = 2
+const STRIKE = 1 
 
 class Scorecard {
   constructor(
@@ -20,8 +22,8 @@ class Scorecard {
   
   handleFrameResult(frameResult) {
     if (Array.isArray(frameResult)) {
-      this._isSpare(frameResult[2])
-      this._isStrike(frameResult[1])
+      this._isSpare(frameResult[SPARE])
+      this._isStrike(frameResult[STRIKE])
       return this.addToGameScore(frameResult)
     }
     return frameResult
@@ -32,7 +34,7 @@ class Scorecard {
   }
 
   _isSpare(spare) {
-    spare === true ? this.spare = true : this.spare = false
+    spare ? this.spare = true : this.spare = false
   }
 
   _isStrike(strike) {
