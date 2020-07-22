@@ -1,6 +1,6 @@
 class Frame {
 
-  addNewFrame(roll1, roll2) {
+  getFrameResult(roll1, roll2) {
     if (!this.isValidScore(roll1, roll2)) {
       return 'Invalid score, please enter new frame'
     }

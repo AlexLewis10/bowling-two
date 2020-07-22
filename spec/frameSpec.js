@@ -9,11 +9,11 @@ describe('Frame', () => {
 
   describe('Returns information for the frame', () => {
     it('returns an array with score, spare and strike', () => {
-      expect(frame.addNewFrame(4, 5)).toEqual([9, false, false])
+      expect(frame.getFrameResult(4, 5)).toEqual([9, false, false])
     })
 
     it('returns user message if the input is invalid', () => {
-      expect(frame.addNewFrame(8, 8)).toEqual('Invalid score, please enter new frame')
+      expect(frame.getFrameResult(8, 8)).toEqual('Invalid score, please enter new frame')
     })
   })
 

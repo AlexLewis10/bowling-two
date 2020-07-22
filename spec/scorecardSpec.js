@@ -8,14 +8,14 @@ describe('Scorecard', () => {
   describe('AddNewScore adds score to the scorecard', () => {
     it ('calls frame class with addNewFrame', () => {
       let frameInstance = scorecard.frame
-      const spy = spyOn(frameInstance, 'addNewFrame')
-      scorecard.addFrameScore()
+      const spy = spyOn(frameInstance, 'getFrameResult')
+      scorecard.addNewFrame()
     
       expect(spy).toHaveBeenCalled()
     })
 
     it('adds the frame array to the gameScore', () => {
-      scorecard.addFrameScore(2, 3)
+      scorecard.addNewFrame(2, 3)
 
       expect(scorecard.gameScore).toEqual([[5, false, false]])
     })
@@ -23,15 +23,15 @@ describe('Scorecard', () => {
     it('returns a message to the user if frameScore is invalid', () => {
       const errorMessage = 'Invalid score, please enter new frame'
 
-      expect(scorecard.addFrameScore(5, 6)).toEqual(errorMessage);
+      expect(scorecard.addNewFrame(5, 6)).toEqual(errorMessage);
     })
 
     it('can add a maximum of 9 standard frames to the gameScore array', () => {
       for (let i = 0; i < 9; i++) {
-        scorecard.addFrameScore(3, 4)
+        scorecard.addNewFrame(3, 4)
       }
 
-      expect(scorecard.addFrameScore(2, 1)).toEqual('Max number of normal frames')
+      expect(scorecard.addNewFrame(2, 1)).toEqual('Max number of normal frames')
     })
   })
 })
