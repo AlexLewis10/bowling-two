@@ -48,4 +48,12 @@ describe('Scorecard', () => {
       expect(scorecard.spare).toEqual(false)
     })
   })
+
+  describe('Strike in a frame', () => {
+    it('if there is no strike, sets the strike state to false', () => {
+      scorecard.handleFrameResult([10, false, false])
+
+      expect(scorecard.strike).toEqual(false)
+    })
+  })
 })

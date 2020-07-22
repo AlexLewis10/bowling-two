@@ -7,6 +7,7 @@ class Scorecard {
     this.frame = frame
     this.gameScore = []
     this.spare = false
+    this.strike = false
   }
   
   addNewFrame(roll1, roll2) { 
