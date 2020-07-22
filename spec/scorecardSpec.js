@@ -35,11 +35,17 @@ describe('Scorecard', () => {
     })
   })
 
-  describe('A frame that resulted in a spare', () => {
+  describe('Spare in a frame', () => {
     it('sets the spare state to true', () => {
-      scorecard.handleFrameResult([9, false, true])
+      scorecard.handleFrameResult([10, false, true])
 
       expect(scorecard.spare).toEqual(true)
+    })
+
+    it('if there is no spare, sets spare state to false', () => {
+      scorecard.handleFrameResult([10, false, false])
+
+      expect(scorecard.spare).toEqual(false)
     })
   })
 })
