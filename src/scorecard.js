@@ -7,30 +7,31 @@ class Scorecard {
     frame = new Frame()
   ) {
     this.frame = frame
-    this.gameScore = []
+    this.frameHistory = []
     this.spare = false
     this.strike = false
   }
   
   addNewFrame(roll1, roll2) { 
     const frameResult = this.frame.getFrameResult(roll1, roll2)
-    if (this.gameScore.length === MAX_NORMAL_FRAMES) {
+    if (this.frameHistory.length === MAX_NORMAL_FRAMES) {
       return 'Max number of normal frames'
     } 
-    return this.handleFrameResult(frameResult)
+    return this.handleFrameResult(frameResult, roll1, roll2)
   }
   
-  handleFrameResult(frameResult) {
+  handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
+      this.addToFrameHistory(frameResult)
       this._isSpare(frameResult[SPARE])
       this._isStrike(frameResult[STRIKE])
-      return this.addToGameScore(frameResult)
     }
     return frameResult
   }
 
-  addToGameScore(frameResult) {
-    return this.gameScore.push(frameResult)
+
+  addToFrameHistory(frameResult) {
+    return this.frameHistory.push(frameResult)
   }
 
   _isSpare(spare) {

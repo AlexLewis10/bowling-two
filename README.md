@@ -18,3 +18,11 @@
     }
     return frameResult
   }
+
+
+
+    //update frame scores (roll1, roll2)
+  // if this.spare is true
+    // update previous frame result += roll1
+  // if this.strike is true
+    //update previous frame result += roll1, roll2

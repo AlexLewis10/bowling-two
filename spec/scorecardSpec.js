@@ -14,10 +14,10 @@ describe('Scorecard', () => {
       expect(spy).toHaveBeenCalled()
     })
 
-    it('adds the frame array to the gameScore', () => {
+    it('adds the frame array to the frameHistory', () => {
       scorecard.addNewFrame(2, 3)
 
-      expect(scorecard.gameScore).toEqual([[5, false, false]])
+      expect(scorecard.frameHistory).toEqual([[5, false, false]])
     })
 
     it('returns a message to the user if frameScore is invalid', () => {
@@ -26,7 +26,7 @@ describe('Scorecard', () => {
       expect(scorecard.addNewFrame(5, 6)).toEqual(errorMessage);
     })
 
-    it('can add a maximum of 9 standard frames to the gameScore array', () => {
+    it('can add a maximum of 9 standard frames to the frameHistory array', () => {
       for (let i = 0; i < 9; i++) {
         scorecard.addNewFrame(3, 4)
       }
