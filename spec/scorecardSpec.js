@@ -35,6 +35,14 @@ describe('Scorecard', () => {
     })
   })
 
+  describe('Frame score is added to score history', () => {
+    it('score is added to the gameScore array', () => {
+      scorecard.handleFrameResult([5, false, false])
+
+      expect(scorecard.gameScore).toEqual([5])
+    })
+  })
+
   describe('Spare in a frame', () => {
     it('sets the spare state to true', () => {
       scorecard.handleFrameResult([10, false, true])
