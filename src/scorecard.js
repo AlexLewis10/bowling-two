@@ -21,11 +21,7 @@ class Scorecard {
   handleFrameResult(frameResult) {
     if (Array.isArray(frameResult)) {
       this._isSpare(frameResult[2])
-      if (frameResult[1]) {
-        this.strike = true
-      } else {
-        this.strike = false
-      }
+      this._isStrike(frameResult[1])
       return this.addToGameScore(frameResult)
     }
     return frameResult
@@ -37,6 +33,10 @@ class Scorecard {
 
   _isSpare(spare) {
     spare === true ? this.spare = true : this.spare = false
+  }
+
+  _isStrike(strike) {
+    strike ? this.strike = true : this.strike = false
   }
 }
 
