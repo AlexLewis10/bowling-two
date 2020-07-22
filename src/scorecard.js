@@ -13,6 +13,10 @@ class Scorecard {
     if (this.gameScore.length === MAX_NORMAL_FRAMES) {
       return 'Max number of normal frames'
     } 
+    return this.getFrameResult(frameResult)
+  }
+
+  getFrameResult(frameResult) {
     if (Array.isArray(frameResult)) {
       return this.addToGameScore(frameResult)
     }

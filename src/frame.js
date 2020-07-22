@@ -6,7 +6,7 @@ class Frame {
     }
     return [
       this.frameScore(roll1, roll2), 
-      this.isStrike(roll1, roll2), 
+      this.isStrike(roll1), 
       this.isSpare(roll1, roll2)]
   }
 
