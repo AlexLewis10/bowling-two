@@ -1,6 +1,7 @@
 const MAX_NORMAL_FRAMES = 9
 const SPARE = 2
 const STRIKE = 1 
+const SCORE = 0
 
 class Scorecard {
   constructor(
@@ -24,7 +25,7 @@ class Scorecard {
   handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
       this.addToFrameHistory(frameResult)
-      this._addToGameScore(frameResult[0])
+      this._addToGameScore(frameResult[SCORE])
       this._isSpare(frameResult[SPARE])
       this._isStrike(frameResult[STRIKE])
     }
