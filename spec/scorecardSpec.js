@@ -55,5 +55,11 @@ describe('Scorecard', () => {
 
       expect(scorecard.strike).toEqual(false)
     })
+
+    it('if there is a strike, sets the strike state to true', () => {
+      scorecard.handleFrameResult([10, true, false])
+
+      expect(scorecard.strike).toEqual(true)
+    })
   })
 })
