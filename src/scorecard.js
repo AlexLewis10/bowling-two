@@ -12,6 +12,7 @@ class Scorecard {
     this.spare = false
     this.strike = false
     this.gameScore = []
+    this.frameNumber = 0
   }
   
   addNewFrame(roll1, roll2) { 
@@ -24,6 +25,9 @@ class Scorecard {
   
   handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
+      this.frameNumber++
+      //if spare is true add roll1 to previous frame score
+      //if strike is true add roll1 && roll2 to previous frame score.
       this.addToFrameHistory(frameResult)
       this._addToGameScore(frameResult[SCORE])
       this._isSpare(frameResult[SPARE])

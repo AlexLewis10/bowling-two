@@ -70,4 +70,12 @@ describe('Scorecard', () => {
       expect(scorecard.strike).toEqual(true)
     })
   })
+
+  describe('Increases the frame number', () => {
+    it('increments the frame number by one after each frame', () => {
+      scorecard.addNewFrame(2, 1)
+
+      expect(scorecard.frameNumber).toEqual(1)
+    }) 
+  })
 })
