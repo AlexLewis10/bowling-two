@@ -41,11 +41,12 @@ class Scorecard {
   }
   
   _updatePreviousFrame(roll1, roll2) {
+    const previousFrame = this.frameNumber - 1
     if (this.spare) {
-      this.gameScore[(this.frameNumber - 1)] += roll1
+      this.gameScore[previousFrame] += roll1
     } 
     if (this.strike) {
-      this.gameScore[(this.frameNumber - 1)] += (roll1 + roll2)
+      this.gameScore[previousFrame] += (roll1 + roll2)
     }
   }
   
