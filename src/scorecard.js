@@ -66,11 +66,12 @@ class Scorecard {
   }
 
   _isStrike(strike) {
-    if (this.strike === true && strike === true) {
-      this.multiStrike = true
-    } else {
-      this.multiStrike = false
-    }
+    (this.strike && strike) ? this.multiStrike = true : this.multiStrike = false
+    // if (this.strike === true && strike === true) {
+    //   this.multiStrike = true
+    // } else {
+    //   this.multiStrike = false
+    // }
     strike ? this.strike = true : this.strike = false
   }
 }
