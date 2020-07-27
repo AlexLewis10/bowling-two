@@ -26,7 +26,6 @@ class Scorecard {
   
   handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
-      console.log(roll1)
       this._updatePreviousFrame(roll1, roll2)
       this._incrementFrameNumber()
       this.addToFrameHistory(frameResult)
@@ -69,6 +68,8 @@ class Scorecard {
   _isStrike(strike) {
     if (this.strike === true && strike === true) {
       this.multiStrike = true
+    } else {
+      this.multiStrike = false
     }
     strike ? this.strike = true : this.strike = false
   }

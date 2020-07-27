@@ -101,5 +101,14 @@ describe('Scorecard', () => {
 
       expect(scorecard.gameScore).toEqual([22, 15, 5])
     })
+
+    it('following multiple strikes, scoring returns to normal', () => {
+      scorecard.addNewFrame(10, 0)
+      scorecard.addNewFrame(10, 0)
+      scorecard.addNewFrame(2, 3)
+      scorecard.addNewFrame(5, 4)
+
+      expect(scorecard.gameScore).toEqual([22, 15, 5, 9])
+    })
   })
 })
