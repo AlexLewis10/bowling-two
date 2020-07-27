@@ -25,8 +25,11 @@ class Scorecard {
   
   handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
+      if (this.spare) {
+        console.log(this.frameNumber)
+        this.gameScore[(this.frameNumber - 1)] += roll1
+      } 
       this._incrementFrameNumber()
-      //if spare is true add roll1 to previous frame score
       //if strike is true add roll1 && roll2 to previous frame score.
       this.addToFrameHistory(frameResult)
       this._addToGameScore(frameResult[SCORE])

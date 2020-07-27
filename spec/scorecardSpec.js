@@ -78,4 +78,13 @@ describe('Scorecard', () => {
       expect(scorecard.frameNumber).toEqual(1)
     }) 
   })
+
+  describe('Updates previous frame score', () => {
+    it('following a spare', () => {
+      scorecard.addNewFrame(5, 5)
+      scorecard.addNewFrame(2, 3)
+
+      expect(scorecard.gameScore).toEqual([12, 5])
+    })
+  })
 })
