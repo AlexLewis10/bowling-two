@@ -20,7 +20,7 @@ class Frame {
   }
 
   isSpare(roll1, roll2) {
-    const spare = roll1 + roll2 === 10 ? true : false
+    const spare = (roll1 + roll2 === 10 && roll2 != 0) ? true : false
     return spare
   }
 

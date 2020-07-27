@@ -86,5 +86,12 @@ describe('Scorecard', () => {
 
       expect(scorecard.gameScore).toEqual([12, 5])
     })
+
+    it('following a strike', () => {
+      scorecard.addNewFrame(10, 0)
+      scorecard.addNewFrame(5, 4)
+
+      expect(scorecard.gameScore).toEqual([19, 9])
+    })
   })
 })

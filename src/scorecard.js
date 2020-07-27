@@ -40,10 +40,13 @@ class Scorecard {
     return this.frameHistory.push(frameResult)
   }
   
-  _updatePreviousFrame(roll1) {
+  _updatePreviousFrame(roll1, roll2) {
     if (this.spare) {
       this.gameScore[(this.frameNumber - 1)] += roll1
     } 
+    if (this.strike) {
+      this.gameScore[(this.frameNumber - 1)] += (roll1 + roll2)
+    }
   }
   
   _incrementFrameNumber() {
