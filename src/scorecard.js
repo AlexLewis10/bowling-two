@@ -13,6 +13,7 @@ class Scorecard {
     this.strike = false
     this.gameScore = []
     this.frameNumber = 0
+    this.multiStrike = false
   }
   
   addNewFrame(roll1, roll2) { 
@@ -25,9 +26,9 @@ class Scorecard {
   
   handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
+      console.log(roll1)
       this._updatePreviousFrame(roll1, roll2)
       this._incrementFrameNumber()
-      //if strike is true add roll1 && roll2 to previous frame score.
       this.addToFrameHistory(frameResult)
       this._addToGameScore(frameResult[SCORE])
       this._isSpare(frameResult[SPARE])
@@ -48,6 +49,9 @@ class Scorecard {
     if (this.strike) {
       this.gameScore[previousFrame] += (roll1 + roll2)
     }
+    if (this.multiStrike) {
+      this.gameScore[this.frameNumber - 2] += roll1
+    }
   }
   
   _incrementFrameNumber() {
@@ -63,6 +67,9 @@ class Scorecard {
   }
 
   _isStrike(strike) {
+    if (this.strike === true && strike === true) {
+      this.multiStrike = true
+    }
     strike ? this.strike = true : this.strike = false
   }
 }

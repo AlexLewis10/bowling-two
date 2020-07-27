@@ -93,5 +93,13 @@ describe('Scorecard', () => {
 
       expect(scorecard.gameScore).toEqual([19, 9])
     })
+
+    it('following multiple strikes', () => {
+      scorecard.addNewFrame(10, 0)
+      scorecard.addNewFrame(10, 0)
+      scorecard.addNewFrame(2, 3)
+
+      expect(scorecard.gameScore).toEqual([22, 15, 5])
+    })
   })
 })
