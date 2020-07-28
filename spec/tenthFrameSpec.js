@@ -15,5 +15,9 @@ describe('TenthFrame', () => {
     it('cannot have roll3 if roll1 plus roll2 is less than 10', () => {
       expect(tenthFrame._isTenthFrameValid(2, 3, 4)).toEqual(false)
     })
+
+    // it('total score cannot be higher than 30', () => {
+    //   expect(tenthFrame._isTenthFrameValid(10, 10, 11)).toEqual(false)
+    // })
   })
 })
