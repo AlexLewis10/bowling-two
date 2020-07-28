@@ -23,7 +23,7 @@ class Scorecard {
     const frameResult = this.frame.getFrameResult(roll1, roll2)
     if (this.frameHistory.length === MAX_NORMAL_FRAMES) {
       const tenthFrameResult = this.tenthFrame._getFrameResult(roll1, roll2, roll3)
-      return this._handleFrameResult(tenthFrameResult)
+      return this._handleFrameResult(tenthFrameResult, roll1, roll2)
     } 
     return this._handleFrameResult(frameResult, roll1, roll2)
   }
