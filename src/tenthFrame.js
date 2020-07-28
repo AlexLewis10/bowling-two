@@ -12,7 +12,7 @@ class TenthFrame extends Frame {
   }
 
   _isTenthFrameValid(roll1, roll2, roll3=0) {
-    if (roll1 + roll2 + roll3 > 30) {
+    if (this._frameScore(roll1, roll2, roll3) > 30) {
       return false
     }
     if (roll1 + roll2 < 10 && roll3 > 0) {
