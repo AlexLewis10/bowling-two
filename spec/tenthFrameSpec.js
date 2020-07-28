@@ -5,6 +5,12 @@ describe('TenthFrame', () => {
     tenthFrame = new TenthFrame()
   })
 
+  describe('Returns the frame score', () => {
+    it('returns the score from the frame', () => {
+      expect(tenthFrame._getFrameResult(3, 2, 0)).toEqual([5])
+    })
+  })
+
   describe('Calculates the frame score', () => {
     it('returns the frame score for the 10th frame', () => {
       expect(tenthFrame._frameScore(5, 5, 3)).toEqual(13)

@@ -8,7 +8,7 @@ class TenthFrame extends Frame {
   }
  
   _getFrameResult(roll1, roll2, roll3) {
-    
+    return [this._frameScore(roll1, roll2, roll3)]
   }
 
   _frameScore(roll1, roll2, roll3=0) {
