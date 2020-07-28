@@ -19,5 +19,9 @@ describe('TenthFrame', () => {
     it('total score cannot be higher than 30', () => {
       expect(tenthFrame._isTenthFrameValid(10, 10, 11)).toEqual(false)
     })
+
+    it('no single roll can be higher than 10', () => {
+      expect(tenthFrame._isTenthFrameValid(11, 0, 0)).toEqual(false)
+    })
   })
 })

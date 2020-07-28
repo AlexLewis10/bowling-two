@@ -18,5 +18,8 @@ class TenthFrame extends Frame {
     if (roll1 + roll2 < 10 && roll3 > 0) {
       return false
     }
+    if (roll1 || roll2 || roll3 > 10) {
+      return false
+    }
   }
 }
