@@ -25,10 +25,10 @@ class Scorecard {
       const tenthFrameResult = this.tenthFrame._getFrameResult(roll1, roll2, roll3)
       return tenthFrameResult
     } 
-    return this.handleFrameResult(frameResult, roll1, roll2)
+    return this._handleFrameResult(frameResult, roll1, roll2)
   }
   
-  handleFrameResult(frameResult, roll1, roll2) {
+  _handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {
       this._updatePreviousFrame(roll1, roll2)
       this._incrementFrameNumber()

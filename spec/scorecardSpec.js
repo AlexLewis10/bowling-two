@@ -40,7 +40,7 @@ describe('Scorecard', () => {
 
   describe('Frame score is added to score history', () => {
     it('score is added to the gameScore array', () => {
-      scorecard.handleFrameResult([5, false, false])
+      scorecard._handleFrameResult([5, false, false])
 
       expect(scorecard.gameScore).toEqual([5])
     })
@@ -48,13 +48,13 @@ describe('Scorecard', () => {
 
   describe('Spare in a frame', () => {
     it('sets the spare state to true', () => {
-      scorecard.handleFrameResult([10, false, true])
+      scorecard._handleFrameResult([10, false, true])
 
       expect(scorecard.spare).toEqual(true)
     })
 
     it('if there is no spare, sets spare state to false', () => {
-      scorecard.handleFrameResult([10, false, false])
+      scorecard._handleFrameResult([10, false, false])
 
       expect(scorecard.spare).toEqual(false)
     })
@@ -62,13 +62,13 @@ describe('Scorecard', () => {
 
   describe('Strike in a frame', () => {
     it('if there is no strike, sets the strike state to false', () => {
-      scorecard.handleFrameResult([10, false, false])
+      scorecard._handleFrameResult([10, false, false])
 
       expect(scorecard.strike).toEqual(false)
     })
 
     it('if there is a strike, sets the strike state to true', () => {
-      scorecard.handleFrameResult([10, true, false])
+      scorecard._handleFrameResult([10, true, false])
 
       expect(scorecard.strike).toEqual(true)
     })
