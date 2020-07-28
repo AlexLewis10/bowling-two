@@ -31,6 +31,28 @@ describe('Scorecard', () => {
       expect(scorecard.frameHistory).toEqual([[5, false, false]])
     })
 
+    it('adds the tenth frame array to the game history', () => {
+      const frameHistory = [
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [7, false, false],
+        [5]
+      ]
+      
+      for (let i = 0; i < 9; i++) {
+        scorecard.addNewFrame(3, 4)
+      }
+      scorecard.addNewFrame(2, 3)
+
+      expect(scorecard.frameHistory).toEqual(frameHistory)
+    })
+
     it('returns a message to the user if frameScore is invalid', () => {
       const errorMessage = 'Invalid score, please enter new frame'
 
