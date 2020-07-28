@@ -14,6 +14,17 @@ describe('Scorecard', () => {
       expect(spy).toHaveBeenCalled()
     })
 
+    it('scorecard uses the tenthFrame class after 9 frames', () => {
+      for (let i = 0; i < 9; i++) {
+        scorecard.addNewFrame(3, 4)
+      }
+      let tenthFrameInstance = scorecard.tenthFrame
+      const spy = spyOn(tenthFrameInstance, '_getFrameResult')
+      scorecard.addNewFrame(2, 3)
+    
+      expect(spy).toHaveBeenCalled()
+    })
+
     it('adds the frame array to the frameHistory', () => {
       scorecard.addNewFrame(2, 3)
 
@@ -24,14 +35,6 @@ describe('Scorecard', () => {
       const errorMessage = 'Invalid score, please enter new frame'
 
       expect(scorecard.addNewFrame(5, 6)).toEqual(errorMessage);
-    })
-
-    xit('can add a maximum of 9 standard frames to the frameHistory array', () => {
-      for (let i = 0; i < 9; i++) {
-        scorecard.addNewFrame(3, 4)
-      }
-
-      expect(scorecard.addNewFrame(2, 1)).toEqual('Max number of normal frames')
     })
   })
 
@@ -111,17 +114,4 @@ describe('Scorecard', () => {
       expect(scorecard.gameScore).toEqual([22, 15, 5, 9])
     })
   })
-
-  // describe('10th frame', () => {
-  //   it('scorecard uses the tenthFrame class', () => {
-  //     for (let i = 0; i < 9; i++) {
-  //       scorecard.addNewFrame(3, 4)
-  //     }
-  //     let tenthFrameInstance = scorecard.tenthFrame
-  //     const spy = spyOn(tenthFrameInstance, 'getFrameResult')
-  //     scorecard.addNewFrame()
-    
-  //     expect(spy).toHaveBeenCalled()
-  //   })
-  // })
 })

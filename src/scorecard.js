@@ -9,6 +9,7 @@ class Scorecard {
     tenthFrame = new TenthFrame()
   ) {
     this.frame = frame
+    this.tenthFrame = tenthFrame
     this.frameHistory = []
     this.spare = false
     this.strike = false
@@ -17,10 +18,11 @@ class Scorecard {
     this.multiStrike = false
   }
   
-  addNewFrame(roll1, roll2) { 
+  
+  addNewFrame(roll1, roll2, roll3=0) { 
     const frameResult = this.frame.getFrameResult(roll1, roll2)
     if (this.frameHistory.length === MAX_NORMAL_FRAMES) {
-      const tenthFrameResult = this.tenthFrame.getFrameResult(roll1, roll2, roll3)
+      const tenthFrameResult = this.tenthFrame._getFrameResult(roll1, roll2, roll3)
       return tenthFrameResult
     } 
     return this.handleFrameResult(frameResult, roll1, roll2)
