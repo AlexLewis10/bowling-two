@@ -9,6 +9,12 @@ describe('TenthFrame', () => {
     it('returns the score from the frame', () => {
       expect(tenthFrame._getFrameResult(3, 2, 0)).toEqual([5])
     })
+
+    it('returns an error message if the score is invalid', () => {
+      const errorMessage = 'Invalid score, please enter new frame'
+
+      expect(tenthFrame._getFrameResult(11, 10, 0)).toEqual(errorMessage)
+    })
   })
 
   describe('Calculates the frame score', () => {
