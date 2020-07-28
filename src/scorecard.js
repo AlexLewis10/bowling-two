@@ -5,7 +5,8 @@ const SCORE = 0
 
 class Scorecard {
   constructor(
-    frame = new Frame()
+    frame = new Frame(),
+    tenthFrame = new TenthFrame()
   ) {
     this.frame = frame
     this.frameHistory = []
@@ -19,7 +20,8 @@ class Scorecard {
   addNewFrame(roll1, roll2) { 
     const frameResult = this.frame.getFrameResult(roll1, roll2)
     if (this.frameHistory.length === MAX_NORMAL_FRAMES) {
-      return 'Max number of normal frames'
+      const tenthFrameResult = this.tenthFrame.getFrameResult(roll1, roll2, roll3)
+      return tenthFrameResult
     } 
     return this.handleFrameResult(frameResult, roll1, roll2)
   }

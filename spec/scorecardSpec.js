@@ -111,4 +111,17 @@ describe('Scorecard', () => {
       expect(scorecard.gameScore).toEqual([22, 15, 5, 9])
     })
   })
+
+  // describe('10th frame', () => {
+  //   it('scorecard uses the tenthFrame class', () => {
+  //     for (let i = 0; i < 9; i++) {
+  //       scorecard.addNewFrame(3, 4)
+  //     }
+  //     let tenthFrameInstance = scorecard.tenthFrame
+  //     const spy = spyOn(tenthFrameInstance, 'getFrameResult')
+  //     scorecard.addNewFrame()
+    
+  //     expect(spy).toHaveBeenCalled()
+  //   })
+  // })
 })
