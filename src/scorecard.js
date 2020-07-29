@@ -29,7 +29,12 @@ class Scorecard {
   }
 
   getFinalScore() {
-    return this.gameScore.reduce((result, number) => result + number)
+    const finalScore = this.gameScore.reduce((result, number) => result + number)
+    if (finalScore === 0) {
+      return 'Gutter Game'
+    }
+
+    return finalScore
   }
   
   _handleFrameResult(frameResult, roll1, roll2) {

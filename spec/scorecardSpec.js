@@ -145,5 +145,13 @@ describe('Scorecard', () => {
 
       expect(scorecard.getFinalScore()).toEqual(70)
     })
+
+    it('following a gutter game', () => {
+      for (let i = 0; i < 10; i++) {
+        scorecard.addNewFrame(0, 0)
+      }
+
+      expect(scorecard.getFinalScore()).toEqual('Gutter Game')
+    })
   })
 })
