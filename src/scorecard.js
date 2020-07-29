@@ -27,6 +27,10 @@ class Scorecard {
     } 
     return this._handleFrameResult(frameResult, roll1, roll2)
   }
+
+  getFinalScore() {
+    return this.gameScore.reduce((result, number) => result + number)
+  }
   
   _handleFrameResult(frameResult, roll1, roll2) {
     if (Array.isArray(frameResult)) {

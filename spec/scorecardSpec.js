@@ -136,4 +136,14 @@ describe('Scorecard', () => {
       expect(scorecard.gameScore).toEqual([22, 15, 5, 9])
     })
   })
+
+  describe('Gets the final score', () => {
+    it('following a normal game', () => {
+      for (let i = 0; i < 10; i++) {
+        scorecard.addNewFrame(3, 4)
+      }
+
+      expect(scorecard.getFinalScore()).toEqual(70)
+    })
+  })
 })
