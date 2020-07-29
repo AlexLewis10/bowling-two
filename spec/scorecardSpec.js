@@ -143,7 +143,7 @@ describe('Scorecard', () => {
         scorecard.addNewFrame(3, 4)
       }
 
-      expect(scorecard.getFinalScore()).toEqual(70)
+      expect(scorecard.getFinalScore()).toEqual('Well done. You scored 70')
     })
 
     it('following a gutter game', () => {
@@ -151,7 +151,7 @@ describe('Scorecard', () => {
         scorecard.addNewFrame(0, 0)
       }
 
-      expect(scorecard.getFinalScore()).toEqual('Gutter Game')
+      expect(scorecard.getFinalScore()).toEqual('Gutter Game. You scored 0')
     })
 
 
