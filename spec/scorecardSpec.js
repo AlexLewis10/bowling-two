@@ -153,5 +153,15 @@ describe('Scorecard', () => {
 
       expect(scorecard.getFinalScore()).toEqual('Gutter Game')
     })
+
+
+    it('following a perfect game', () => {
+      for (let i = 0; i < 9; i++) {
+        scorecard.addNewFrame(10, 0)
+      }
+      scorecard.addNewFrame(10, 10, 10)
+
+      expect(scorecard.getFinalScore()).toEqual('Perfect Game. You scored 300')
+    })
   })
 })

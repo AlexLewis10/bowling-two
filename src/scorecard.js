@@ -33,7 +33,9 @@ class Scorecard {
     if (finalScore === 0) {
       return 'Gutter Game'
     }
-
+    if (finalScore === 300) {
+      return `Perfect Game. You scored ${finalScore}`
+    }
     return finalScore
   }
   
