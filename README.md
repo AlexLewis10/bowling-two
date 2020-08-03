@@ -27,7 +27,8 @@ A Perfect Game is when the player rolls 12 strikes (10 regular strikes and 2 str
 In the image below you can find some score examples.
 
 ### Tech
-
+| | |
+| ---- | ---|
 | Language | JavaScript |
 | Test | Jasmine |
 | Linter | ESlint |
@@ -35,7 +36,7 @@ In the image below you can find some score examples.
 ### To run
 - Clone this repo
 - Run npm install
-- At present you can run the game in the console in the browser.
+- Open specrunner.html in browser and then run in the console.
 
 
 ### To do
